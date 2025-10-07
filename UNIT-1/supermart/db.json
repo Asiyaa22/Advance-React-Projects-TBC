@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Wireless Headphones",
+      "price": 999,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "2",
+      "title": "Coffee Mug",
+      "price": 249,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "3",
+      "title": "Bluetooth Speaker",
+      "price": 1499,
+      "image": "https://via.placeholder.com/150"
+    }
+  ],
+  "checkout": [
+    {
+      "id": "0996",
+      "cart": [
+        {
+          "id": "3",
+          "title": "Bluetooth Speaker",
+          "price": 1499,
+          "image": "https://via.placeholder.com/150",
+          "qty": 2
+        },
+        {
+          "id": "2",
+          "title": "Coffee Mug",
+          "price": 249,
+          "image": "https://via.placeholder.com/150",
+          "qty": 1
+        }
+      ],
+      "coupon": ""
+    }
+  ]
+}
