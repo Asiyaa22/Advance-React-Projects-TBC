@@ -1,0 +1,258 @@
+/* 🌍 GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8f0ff 100%);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🧭 HEADER */
+.header {
+  width: 100%;
+  background: linear-gradient(90deg, #004aad, #0074d9);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.search-form input,
+.search-form select {
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-form button {
+  background: #fff;
+  color: #004aad;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-form button:hover {
+  background: #004aad;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 74, 173, 0.35);
+}
+
+/* 📰 NEWS GRID */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* 🧾 NEWS CARD */
+.news-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 74, 173, 0.2);
+}
+
+.news-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background-color: #e0e6f5;
+  transition: transform 0.4s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+}
+
+.news-content {
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  position: relative;
+}
+
+.news-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.news-card:hover .news-title {
+  color: #004aad;
+}
+
+.news-desc {
+  color: #444;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.news-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 0.7rem;
+}
+
+.news-source {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.news-link {
+  color: #004aad;
+  font-weight: 600;
+  transition: color 0.25s;
+}
+
+.news-link:hover {
+  color: #0074d9;
+  text-decoration: underline;
+}
+
+/* 🌀 LOADER */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ddd;
+  border-top-color: #004aad;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 0.8rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container p {
+  color: #333;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+/* ⚠️ ERRORS & EMPTY STATE */
+.error {
+  text-align: center;
+  color: red;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.no-news {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (min-width: 600px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-form {
+    justify-content: flex-end;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+}

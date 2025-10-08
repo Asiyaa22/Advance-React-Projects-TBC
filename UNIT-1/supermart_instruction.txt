@@ -1,0 +1,107 @@
+SuperMart - Smart Shopping Cart with Redux Thunk & Saga
+
+Local Backend: http://localhost:4000
+Local Frontend: http://localhost:5173
+
+Objective:
+Build a scalable e-commerce web application that allows users to browse products, manage their shopping cartConcepts Covered (Unit 1: Redux - State Management):
+- Redux Store, Actions, and Reducers
+- Connecting Redux to React using Provider, useSelector, and useDispatch
+- Asynchronous actions using Redux Thunk
+- Side-effect handling with Redux Saga
+- API integration with Axios (fetch products and simulate checkout)
+- Dynamic UI updates with derived state
+- Clean and modular Redux architecture
+
+Features Implemented:
+- Dynamic product listing fetched via mock API (db.json)
+- Add, remove, and update quantity for products in cart
+- Real-time price calculation (Subtotal & Total)
+- Redux Thunk used for async API data fetching
+- Redux Saga used for checkout simulation and side effects
+- Organized file structure with separate slices for cart & products
+- Responsive and intuitive interface with clean CSS styling
+- Placeholder images for unavailable products
+
+Folder Structure:
+
+supermart/
+├── node_modules/
+├── public/
+├── src/
+│   ├── api/
+│   │   └── index.js
+│   │
+│   ├── assets/
+│   │   └── react.svg
+│   │
+│   ├── components/
+│   │   ├── CartSidebar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   └── ProductCard.jsx
+│   │
+│   ├── pages/
+│   │   ├── CartPage.jsx
+│   │   ├── CheckoutPage.jsx
+│   │   └── ProductList.jsx
+│   │
+│   ├── redux/
+│   │   ├── actions/
+│   │   │   ├── cartActions.js
+│   │   │   └── productActions.js
+│   │   │
+│   │   ├── reducers/
+│   │   │   ├── cartReducer.js
+│   │   │   ├── index.js
+│   │   │   └── productsReducer.js
+│   │   │
+│   │   ├── sagas/
+│   │   │   ├── checkoutSaga.js
+│   │   │   └── index.js
+│   │   │
+│   │   └── store/
+│   │       └── store.js
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│
+├── .gitignore
+├── db.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+└── package.json
+
+Run Instructions:
+
+Backend (json-server):
+1. Navigate to project root
+ cd supermart
+2. Install dependencies
+ npm install
+3. Run the mock backend
+ npx json-server --watch db.json --port 4000
+4. Verify at http://localhost:4000/products
+
+Frontend (Vite + React):
+1. Start the frontend server
+ npm run dev
+2. Open browser at http://localhost:5173
+
+Learning Outcomes:
+- Mastered Redux flow (actions -> reducers -> store -> UI)
+- Integrated Redux Thunk for async API requests
+- Learned Redux Saga for side-effect management
+- Implemented scalable React file structure
+- Connected mock APIs using json-server
+- Designed a responsive, production-ready front-end
+
+Notes:
+- Ensure json-server is running before frontend
+- Redux DevTools can be used for debugging
+- Quantities and totals update dynamically
+- Placeholder images for missing product images
+- Checkout process is fully simulated (no payments)
