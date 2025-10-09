@@ -1,0 +1,125 @@
+📘 Project Name: LivePoll App – Real-Time Voting Platform with React Testing Library
+
+🔗 Local Frontend: http://localhost:5173
+
+🔗 Testing Environment: Vitest + React Testing Library
+
+
+🎯 Objective:
+
+Build a real-time, interactive polling application that allows users to create, vote, and view live poll results instantly.
+The project focuses on mastering React component testing, mock APIs, and event-driven UI behavior using React Testing Library (RTL) and Vitest.
+
+🧠 Concepts Covered (Unit 2 – React Testing Library: Component Testing)
+
+▫ Introduction to React Testing Library (RTL)
+▫ Writing basic and advanced component tests
+▫ Testing user interactions (forms, buttons, etc.)
+▫ Mocking API calls and asynchronous operations
+▫ Simulating real-time socket events
+▫ Writing meaningful and maintainable test cases
+▫ Testing form validation and error UI
+▫ Ensuring UI updates reflect state changes
+
+🛠️ Features Implemented:
+
+▫ Create a new live poll dynamically from the UI
+▫ Vote on poll options and see instant updates
+▫ Optimistic UI updates (vote increments before API confirmation)
+▫ Real-time updates using mocked socket events
+▫ Input validation for poll creation (must include question + 2 options)
+▫ Fully tested using Vitest and React Testing Library
+▫ Mock Service Worker (MSW) for API simulation
+▫ Organized testing with mocks, setup files, and coverage
+
+
+livepoll/
+├── node_modules/
+├── public/
+├── src/
+│   ├── App.jsx                     # Root component rendering polls & form
+│   ├── main.jsx                    # Entry point (React + Vite)
+│   ├── api/
+│   │   └── mockServer.js           # Mock API handlers using MSW
+│   ├── components/
+│   │   ├── NewPollForm.jsx         # Handles poll creation UI + validation
+│   │   └── PollItem.jsx            # Displays individual poll options & votes
+│   ├── socket/
+│   │   └── socketClient.js         # Simulated socket events (mocked in tests)
+│   ├── styles.css                  # Modern styled UI (cards, buttons, forms)
+│   └── data/
+│       └── samplePolls.js          # Preloaded poll data for display
+│
+├── tests/
+│   ├── LivePoll.test.jsx           # Full RTL test coverage for components
+│   ├── setupTests.js               # MSW + jest-dom + React setup
+│   ├── test-utils.jsx              # Custom render() wrapper for RTL
+│   └── mocks/
+│       └── server.js               # MSW server setup for testing
+│
+├── vitest.config.js                # Vitest configuration (test env + timeout)
+├── package.json                    # Dependencies & scripts
+└── README.md                       # Documentation
+
+
+💡 Concepts Breakdown:
+
+🔹 React Testing Library (RTL) – Tests components from the user’s perspective (DOM-based testing).
+🔹 Vitest – Fast test runner and assertion library (Vite-native).
+🔹 Mock Service Worker (MSW) – Intercepts API calls to simulate backend behavior.
+🔹 userEvent – Simulates realistic typing and clicking for UI interaction tests.
+🔹 waitFor / findBy – Handles asynchronous rendering and state updates.
+🔹 Socket Mocks – Simulates real-time data with event emitters.
+🔹 Form Validation – Prevents poll submission without proper inputs.
+🔹 Component Isolation Testing – Tests individual behavior of NewPollForm and PollItem.
+
+🧩 Key Test Cases Implemented:
+
+✔ Load & display polls from API
+✔ User can create a new poll (form submission test)
+✔ Voting interaction test (optimistic + final state updates)
+✔ Real-time update via mocked socket event
+✔ Validation errors on invalid poll submission
+
+
+🧪 Testing Stack Used:
+
+vitest – Core testing engine
+
+@testing-library/react – Component DOM testing
+
+@testing-library/user-event – Simulated user actions
+
+msw – API mocking
+
+@testing-library/jest-dom – Extended DOM assertions
+
+
+🚀 Run Instructions:
+🧩 Development (Frontend)
+npm run dev
+
+
+👉 Open browser at: http://localhost:5173
+
+🧪 Run Tests
+npm test
+
+
+or run once (non-watch mode):
+
+npx vitest --run
+
+
+🧠 Learning Outcomes:
+
+✅ Mastered component-level testing with React Testing Library
+✅ Learned mocking strategies (API + socket + async updates)
+✅ Understood act() warnings & how to fix them
+✅ Gained experience in real-world testing workflow
+✅ Built a maintainable, test-driven React application
+
+
+🏁 Summary:
+
+📊 LivePoll App demonstrates how to test a real-world React project thoroughly — from UI rendering, user interaction, API calls, to real-time updates — ensuring both functionality and reliability of your frontend.
