@@ -1,0 +1,122 @@
+Project Name: Login Form Testing with React Testing Library (RTL)
+
+🔗 Local Frontend: http://localhost:5173
+
+🎯 Objective:
+
+Build and test a React login form component using React Testing Library (RTL) and Vitest, focusing on testing user interactions, validation, and asynchronous behavior.
+This project demonstrates unit and integration testing practices that ensure component reliability, usability, and maintainability.
+
+🧠 Concepts Covered (Unit 2):
+
+▫ Introduction to React Testing Library (RTL)
+▫ Writing basic and advanced component tests
+▫ Testing user interactions and form validation
+▫ Mocking API calls and async components
+▫ Writing meaningful and maintainable test cases
+▫ Test setup using Vitest and JSDOM environment
+▫ Snapshot and accessibility testing
+
+🛠️ Features Implemented:
+
+▫ Login form with email and password fields
+▫ Inline validation for empty inputs
+▫ Submit button triggers mock authentication logic
+▫ Error message shown for invalid credentials
+▫ Success message on valid input submission
+▫ Comprehensive test suite using React Testing Library
+▫ Mocking API responses using vi.fn()
+▫ Tests simulate real user behavior with userEvent
+▫ Setup file for global test configuration
+
+login-form-rtl/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── react.svg                  # Default Vite asset
+│   │
+│   ├── components/
+│   │   ├── LoginForm.jsx              # Login form UI component
+│   │   └── __tests__/
+│   │       └── LoginForm.test.jsx     # Test suite for LoginForm
+│   │
+│   ├── App.jsx                        # App entry rendering LoginForm
+│   ├── App.css                        # App layout styles
+│   ├── index.css                      # Global styles and resets
+│   ├── main.jsx                       # React entry point
+│   ├── setupTests.js                  # Global test setup (RTL + jest-dom)
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── vite.config.js
+└── vitest.config.js
+
+📦 Concepts Breakdown:
+
+🔹 React Testing Library (RTL):
+Used to render components and test behavior based on how users interact (not internal implementation).
+
+🔹 Vitest:
+Lightweight test runner and assertion library integrated with Vite.
+
+🔹 setupTests.js:
+Registers global utilities like @testing-library/jest-dom for cleaner assertions.
+
+🔹 User Interaction Testing:
+Uses userEvent.type() and userEvent.click() to simulate typing and clicking.
+
+🔹 Mocking Async Calls:
+Fake login API simulated using vi.fn() to test success and failure scenarios.
+
+🔹 Maintainable Test Design:
+Test cases written in BDD-style (describe, it, expect) for readability and modularity.
+
+✅ Test Scenarios Covered:
+
+✔ Component renders with all fields and button
+✔ Shows validation errors when inputs are empty
+✔ Accepts valid user input and submits form
+✔ Displays loading state or success message after mock API call
+✔ Displays error message for invalid credentials
+✔ Snapshot test to ensure UI consistency
+
+📌 Run Instructions:
+npm i
+npm run test
+
+
+🧪 Testing Environment Setup
+
+Uses jsdom as a simulated browser environment.
+
+setupTests.js imports @testing-library/jest-dom for matchers like:
+
+toBeInTheDocument()
+
+toHaveTextContent()
+
+toBeDisabled()
+
+🛡️ Notes:
+
+• Project is frontend-only, no backend integration needed.
+• Focuses entirely on component-level testing and mocking.
+• Ensures that UI logic behaves correctly under real-world interactions.
+• Helps build confidence before backend integration.
+
+💡 Enhancement Ideas:
+
+▫ Integrate mock service worker (MSW) for advanced API mocking
+▫ Add password visibility toggle and test it
+▫ Include accessibility (a11y) tests with axe-core
+▫ Test keyboard navigation and focus order
+
+🚀 Conclusion:
+The Login Form Testing App showcases a complete React Testing Library workflow — from rendering and interaction testing to mocking asynchronous logic.
+It’s an essential foundation for writing robust, maintainable, and production-grade React components.
+
