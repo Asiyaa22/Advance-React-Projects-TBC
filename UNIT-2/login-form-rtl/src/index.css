@@ -1,68 +1,186 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ==============================
+   Global base + design tokens
+   (used by the login component)
+============================== */
 
+:root{
+  /* typography */
+  --font-sans: "Poppins", system-ui, Avenir, "Helvetica Neue", Arial, sans-serif;
+  --base-line-height: 1.5;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-strong: 600;
+
+  /* colors (light mode default) */
+  --bg-1: linear-gradient(135deg, #6c63ff 0%, #5de6de 100%);
+  --panel-bg: rgba(255,255,255,0.20);
+  --panel-border: rgba(255,255,255,0.28);
+  --text-primary: #111827;
+  --muted: #6b7280;
+  --accent-1: #6c63ff;
+  --accent-2: #4fc3f7;
+  --success-bg: #e8fdf2;
+  --success-text: #2b7a3b;
+  --error-bg: #ffecec;
+  --error-text: #d32f2f;
+
+  /* accessible color-scheme hint */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reset + sensible defaults */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: var(--base-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: var(--font-weight-regular);
+  background: var(--bg-1);
+  color: var(--text-primary);
+}
+
+/* layout helper to center the app */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Links */
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: var(--font-weight-medium);
+  color: var(--accent-1);
+  text-decoration: none;
 }
 a:hover {
   color: #535bf2;
+  text-decoration: underline;
 }
 
-body {
+/* Heading sizes */
+h1, h2, h3 {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-strong);
+  letter-spacing: 0.2px;
 }
+h1 { font-size: 2.6rem; line-height: 1.05; }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Buttons (global baseline) */
 button {
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 0.6em 1rem;
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+  color: inherit;
 }
 button:hover {
-  border-color: #646cff;
+  transform: translateY(-2px);
+  border-color: rgba(100,108,255,0.2);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid rgba(108,99,255,0.14);
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: light) {
+/* Small helpers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Form elements baseline */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* ==============================
+   Light / Dark theme adjustments
+   (keeps the login look consistent)
+============================== */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --bg-1: linear-gradient(135deg, #0f1724 0%, #042f33 100%);
+    --panel-bg: rgba(12,14,20,0.6);
+    --panel-border: rgba(255,255,255,0.06);
+    --text-primary: #e6eef6;
+    --muted: #9aa6b2;
+    --accent-1: #8b82ff;
+    --accent-2: #4fc3f7;
+    --success-bg: #152a1d;
+    --success-text: #59c07b;
+    --error-bg: #2b0e0e;
+    --error-text: #ff7b7b;
   }
-  a:hover {
-    color: #747bff;
+
+  html, body {
+    background: var(--bg-1);
+    color: var(--text-primary);
   }
-  button {
-    background-color: #f9f9f9;
+
+  button:hover {
+    border-color: rgba(139,130,255,0.16);
   }
+}
+
+/* ==============================
+   Minimal utility classes for spacing
+============================== */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1rem;
+  margin-inline: auto;
+}
+
+/* Ensure login component visuals are not overridden by global resets:
+   login-specific styles should import or rely on the variables above.
+*/
+.login-container {
+  /* If you want to override here, keep minimal — other styles live in component CSS */
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+}
+
+/* notify styles (safe fallback for components that use data-testid="message" or role="alert") */
+p[data-testid="message"] {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border-left: 4px solid #4caf50;
+  padding: .6rem .9rem;
+  border-radius: 8px;
+}
+div[role="alert"] {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border-left: 4px solid #ff5252;
+  padding: .6rem .9rem;
+  border-radius: 8px;
+}
+
+input, textarea, select {
+  color: #000 !important;
+  background-color: rgba(255, 255, 255, 0.95);
 }
