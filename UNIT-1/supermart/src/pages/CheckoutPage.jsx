@@ -13,7 +13,7 @@ export default function CheckoutPage(){
   return (
     <div className="container" style={{paddingTop:18}}>
       <div style={{display:'grid',gridTemplateColumns:'1fr',gap:16}}>
-        <div className="product-card">
+        <div className="product-card bill">
           <h2 style={{margin:0}}>Billing & Order</h2>
           {items.length === 0 ? <div className="empty">Your cart is empty</div> : (
             <>

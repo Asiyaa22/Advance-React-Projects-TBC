@@ -115,13 +115,13 @@ export default function CartSidebar(){
             <div className="summary-row"><span>Subtotal</span><span>{formatCurrency(total)}</span></div>
             <div className="summary-row"><span>Delivery</span><span>₹0</span></div>
             <div className="summary-row" style={{fontWeight:700}}><span>Total</span><span>{formatCurrency(total)}</span></div>
+            <Link to="/checkout" className="text-white">
             <button
               className="checkout-btn"
-              onClick={() => dispatch({ type: 'CHECKOUT_REQUEST', payload: { cart: items } })}
               style={{marginTop:12}}
             >
-              Checkout
-            </button>
+            Checkout
+            </button></Link>
           </div>
         </>
       )}
