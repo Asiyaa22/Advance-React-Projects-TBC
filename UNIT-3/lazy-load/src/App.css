@@ -1,0 +1,80 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* App Container */
+div {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  color: #ff5722;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+/* Virtualized List Styling */
+.ReactWindowList {
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* List Items */
+div[style*="position: absolute"] {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  transition: background 0.2s;
+}
+
+div[style*="position: absolute"]:hover {
+  background: #ffe0b2;
+}
+
+/* Button Styling */
+button {
+  padding: 12px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 8px;
+  background: #ff9800;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  background: #f57c00;
+  transform: translateY(-3px);
+}
+
+/* Lazy Component */
+p {
+  font-size: 1rem;
+  color: #00796b;
+  font-weight: bold;
+  margin-top: 15px;
+}

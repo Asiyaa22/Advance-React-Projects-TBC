@@ -1,0 +1,77 @@
+📘 Project Name: React Performance Optimization Suite (Memoization, Code Splitting, and Virtualization)
+
+🔗 Local Frontend (Project 1): http://localhost:5173
+
+🎯 Objective
+
+Build optimized React application demonstrating advanced performance techniques using memoization, lazy loading, code splitting, and list virtualization.
+These project showcase how to build scalable React UIs that remain fast and responsive even with thousands of components rendered.
+
+🧠 Concepts Covered (Unit 3: Performance Optimization)
+
+▫ React.memo for component memoization
+▫ useMemo and useCallback for computational and functional memoization
+▫ Code Splitting using dynamic import()
+▫ Lazy loading with React.lazy and Suspense
+▫ List virtualization with react-window
+▫ Efficient rendering and re-render prevention
+▫ Suspense-based fallback UI design
+▫ Dynamic component imports for performance
+
+File Structure
+
+react-performance-memo-lazy/
+├── index.html
+├── package.json
+├── vite.config.js
+└── src/
+    ├── main.jsx                    # ReactDOM entry
+    ├── App.jsx                     # Root component with Suspense
+    ├── App.css                     # Styling and layout
+    ├── data/
+    │   └── products.js             # Large dataset (mock products)
+    └── components/
+        ├── Header.jsx              # Memoized header
+        ├── Footer.jsx              # Memoized footer
+        ├── ProductItem.jsx         # Each product card (memoized)
+        └── ProductList.jsx 
+
+🧱 Technologies Used
+
+React 18+
+
+Vite (for ultra-fast bundling)
+
+JavaScript (ES6+)
+
+HTML5 + CSS3
+
+Node.js / npm for dependency management
+
+
+Execution Steps
+
+# Clone or create project
+cd react-performance-memo-lazy
+
+# Install dependencies
+npm install
+
+# Run dev server
+npm run dev
+
+🛡️ Performance Notes
+
+React.memo only works on pure components (no side effects in render).
+
+useCallback ensures stable function references when passed as props.
+
+useMemo should be used for heavy computations, not every derived value.
+
+React.lazy and Suspense improve initial load time by loading code in chunks.
+
+Avoid inline functions/objects in props to maximize memoization benefits.
+
+📌 Outcome:
+By completing these projects, you’ll gain hands-on experience in real-world performance optimization using Vite + React — covering both UI rendering and bundle optimization techniques that scale to enterprise-level apps.
+
