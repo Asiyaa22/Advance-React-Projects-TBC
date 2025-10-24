@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-label="Placeholder poster">
+  <defs>
+    <linearGradient id="phGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#phGrad)"/>
+  <g fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="6">
+    <rect x="40" y="40" width="520" height="820" rx="16"/>
+  </g>
+
+  <g transform="translate(0,160)" fill="#98a3b3" font-family="Inter, Roboto, Arial">
+    <rect x="80" y="40" width="440" height="340" rx="8" fill="rgba(255,255,255,0.02)"/>
+    <text x="300" y="520" font-size="28" font-weight="700" text-anchor="middle">No poster available</text>
+    <text x="300" y="560" font-size="16" text-anchor="middle">Use placeholder.svg or add a poster to public/posters/</text>
+  </g>
+</svg>
