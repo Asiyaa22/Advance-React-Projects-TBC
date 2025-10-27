@@ -1,0 +1,165 @@
+:root{
+  --bg:#0f1221;
+  --panel:#141832;
+  --text:#e9ecff;
+  --muted:#b0b7e6;
+  --brand:#7c5cff;
+  --accent:#00d4ff;
+  --ring: rgba(124,92,255,0.18);
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* reset-ish */
+*{box-sizing:border-box}
+html,body{padding:0;margin:0}
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(800px 400px at 10% 10%, rgba(17,24,56,0.6), transparent 10%),
+    linear-gradient(180deg,#071028 0%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100dvh;
+  line-height:1.45;
+}
+
+/* layout */
+.site-header{
+  position:sticky;
+  top:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 24px;
+  background:linear-gradient(180deg, rgba(10,12,25,0.6), rgba(10,12,25,0.4));
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  z-index:40;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:700; letter-spacing:.2px;
+}
+.brand img{filter:drop-shadow(0 2px 6px rgba(0,0,0,0.6)); border-radius:6px}
+
+nav a{
+  color:var(--muted);
+  margin-left:12px;
+  padding:8px 10px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition: all 160ms ease;
+}
+nav a:hover{ color:var(--text); background:var(--glass); transform:translateY(-2px) }
+
+.container{
+  max-width:1100px;
+  margin:18px auto 56px;
+  padding:20px;
+}
+
+/* hero / headings */
+.hero h1, h1 { font-size:clamp(22px, 4vw, 36px); margin:0 0 10px; line-height:1.05; }
+.hero p, .muted, p { color:var(--muted); margin:0 0 14px; }
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+.card{
+  background:linear-gradient(180deg, rgba(20,24,50,0.6), rgba(16,18,36,0.6));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:18px;
+  border-radius:14px;
+  box-shadow: 0 10px 30px rgba(3,8,23,0.55);
+  transition: transform 160ms ease, box-shadow 160ms;
+}
+.card:hover{ transform:translateY(-6px); box-shadow: 0 20px 48px rgba(3,8,23,0.65) }
+
+/* info box and code */
+.info{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding:10px 12px;
+  border-radius:12px;
+  background: linear-gradient(90deg, rgba(124,92,255,0.06), rgba(0,212,255,0.05));
+  border:1px solid rgba(255,255,255,0.03);
+  margin:12px 0 20px;
+}
+code{
+  background:rgba(255,255,255,0.03);
+  padding:4px 8px;
+  border-radius:8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size:0.95em;
+  color:var(--text);
+}
+
+/* grid + product cards */
+.grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  margin-top:6px;
+}
+.product-card{
+  background: linear-gradient(180deg, rgba(20,24,50,0.6), rgba(12,14,30,0.6));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:14px;
+  border-radius:14px;
+  box-shadow: 0 8px 28px rgba(2,6,20,0.55);
+  transition: transform 140ms ease, box-shadow 140ms;
+}
+.product-card:hover{ transform:translateY(-6px) }
+.product-card h3{ margin:4px 0 8px; font-size:16px; }
+.price{ font-weight:800; margin:6px 0; color:var(--text) }
+.rating{ color:var(--muted); margin-bottom:10px; }
+.stamp{ font-size:12px; color:var(--muted); }
+
+/* buttons */
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid var(--ring);
+  background:linear-gradient(90deg,var(--brand),var(--accent));
+  color:#081023;
+  font-weight:700;
+  cursor:pointer;
+  transition: transform 120ms ease;
+}
+.btn:hover{ transform: translateY(-2px) }
+
+/* loader */
+.loader{
+  padding:18px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.02);
+  border:1px dashed rgba(255,255,255,0.03);
+  color:var(--muted);
+  display:inline-block;
+}
+
+/* footer */
+.site-footer{
+  margin-top:500px;
+  padding:22px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.03);
+  background:rgba(10,12,25,0.3);
+  backdrop-filter: blur(4px);
+}
+
+/* responsive tweaks */
+@media (max-width:640px){
+  .site-header{ padding:12px 14px }
+  nav a{ margin-left:8px; padding:6px 8px; font-size:14px }
+  .container{ padding:16px }
+}
