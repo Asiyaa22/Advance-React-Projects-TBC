@@ -17,6 +17,12 @@
       "title": "Bluetooth Speaker",
       "price": 1499,
       "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "4",
+      "title": "Bluetooth Speaker",
+      "price": 1499,
+      "image": "https://via.placeholder.com/150"
     }
   ],
   "checkout": [
@@ -39,6 +45,91 @@
         }
       ],
       "coupon": ""
+    },
+    {
+      "id": "f5b4",
+      "cart": [
+        {
+          "id": "1",
+          "title": "Wireless Headphones",
+          "price": 999,
+          "image": "https://via.placeholder.com/150",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "id": "49b6",
+      "cart": [
+        {
+          "id": "3",
+          "title": "Bluetooth Speaker",
+          "price": 1499,
+          "image": "https://via.placeholder.com/150",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "4963",
+      "cart": [
+        {
+          "id": "2",
+          "title": "Coffee Mug",
+          "price": 249,
+          "image": "https://via.placeholder.com/150",
+          "qty": 1
+        }
+      ],
+      "coupon": ""
+    },
+    {
+      "id": "a7cd",
+      "cart": [
+        {
+          "id": "2",
+          "title": "Coffee Mug",
+          "price": 249,
+          "image": "https://via.placeholder.com/150",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "2c53",
+      "cart": [
+        {
+          "id": "3",
+          "title": "Bluetooth Speaker",
+          "price": 1499,
+          "image": "https://via.placeholder.com/150",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "id": "8098",
+      "cart": [
+        {
+          "id": "3",
+          "title": "Bluetooth Speaker",
+          "price": 1499,
+          "image": "https://via.placeholder.com/150",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "1a74",
+      "cart": [
+        {
+          "id": "3",
+          "title": "Bluetooth Speaker",
+          "price": 1499,
+          "image": "https://via.placeholder.com/150",
+          "qty": 1
+        }
+      ]
     }
   ]
 }
