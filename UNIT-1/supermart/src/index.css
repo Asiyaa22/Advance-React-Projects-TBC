@@ -1,4 +1,7 @@
 /* src/index.css - plain CSS, responsive, modern look */
+@import "tailwindcss/preflight";
+/* Removed deprecated Tailwind v3 directive: @tailwind components; — Tailwind v4 no longer supports it */
+@tailwind utilities;
 
 /* --- Variables --- */
 :root{
