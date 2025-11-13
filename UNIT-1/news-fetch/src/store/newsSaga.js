@@ -3,16 +3,18 @@ import { fetchNewsSuccess, fetchNewsFailure } from "../actions/newsAction";
 
 // Get today's date
 const today = new Date();
-const formattedToday = today.toISOString().split('T')[0];
+// const formattedToday = today.toISOString().split('T')[0];
 
 // Get yesterday's date (or past 7 days)
 const yesterday = new Date();
 yesterday.setDate(today.getDate() - 1);
-const formattedYesterday = yesterday.toISOString().split('T')[0];
+// const formattedYesterday = yesterday.toISOString().split('T')[0];
 
-const apiKey = import.meta.env.VITE_NEWS_API_KEY;
+
+const url = `${import.meta.env.VITE_API_BASE_URL}/news`;
+// const apiKey = import.meta.env.VITE_NEWS_API_KEY;
 // Use in API request
-const url = `https://newsapi.org/v2/everything?q=tesla&from=${formattedYesterday}&to=${formattedToday}&sortBy=publishedAt&apiKey=${apiKey}`;
+// const url = `https://newsapi.org/v2/everything?q=tesla&from=${formattedYesterday}&to=${formattedToday}&sortBy=publishedAt&apiKey=${apiKey}`;
 
 
 
