@@ -1,7 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchNewsSuccess, fetchNewsFailure } from "../actions/newsAction";
 
-
 // Get today's date
 const today = new Date();
 const formattedToday = today.toISOString().split('T')[0];
@@ -11,8 +10,9 @@ const yesterday = new Date();
 yesterday.setDate(today.getDate() - 1);
 const formattedYesterday = yesterday.toISOString().split('T')[0];
 
+const apiKey = import.meta.env.VITE_NEWS_API_KEY;
 // Use in API request
-const url = `https://newsapi.org/v2/everything?q=tesla&from=${formattedYesterday}&to=${formattedToday}&sortBy=publishedAt&apiKey=41ae7393fe324e99b7929ecc83c23365`;
+const url = `https://newsapi.org/v2/everything?q=tesla&from=${formattedYesterday}&to=${formattedToday}&sortBy=publishedAt&apiKey=${apiKey}`;
 
 
 
