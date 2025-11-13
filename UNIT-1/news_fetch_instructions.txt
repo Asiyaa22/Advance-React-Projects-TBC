@@ -21,18 +21,6 @@ Build a modern React application that fetches live news articles from **NewsAPI*
 
 ---
 
-### 🛠️ **Features Implemented**
-
-✅ Fetches top news headlines dynamically
-✅ Search functionality for user-defined keywords
-✅ Real-time API integration using Redux-Saga
-✅ Global state maintained via Redux store
-✅ Graceful error and loading handling
-✅ Card-based news display with responsive layout
-✅ Clean, modern UI design with custom CSS
-
----
-
 ### 📂 **Folder Structure**
 
 ```
