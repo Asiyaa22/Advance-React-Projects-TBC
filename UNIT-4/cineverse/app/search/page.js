@@ -13,12 +13,13 @@ export default function SearchPage() {
     const [genre, setGenre] = useState("All");
     const [loading, setLoading] = useState(true);
 
-
+    
     useEffect(() => {
+        const base_url = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
         let active = true;
         (async () => {
             try {
-                const res = await fetch("/api/movies");
+                const res = await fetch(`${base_url}/api/movies`);
                 const data = await res.json();
                 if (active) setMovies(data);
             } finally {

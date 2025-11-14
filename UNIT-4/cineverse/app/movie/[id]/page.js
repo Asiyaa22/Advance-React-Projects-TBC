@@ -3,8 +3,9 @@ import MovieCard from "@/components/MovieCard";
 async function getMovie(id) {
   // Guard: if no id, don't call API
   if (!id) return null;
+  const base_url = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
-  const res = await fetch(`/api/movies?id=${encodeURIComponent(id)}`, {
+  const res = await fetch(`${base_url}/api/movies?id=${encodeURIComponent(id)}`, {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch movie");
