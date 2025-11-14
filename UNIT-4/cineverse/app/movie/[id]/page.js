@@ -1,4 +1,6 @@
 import MovieCard from "@/components/MovieCard";
+export const dynamic = "force-dynamic";
+
 
 async function getMovie(id) {
   // Guard: if no id, don't call API
