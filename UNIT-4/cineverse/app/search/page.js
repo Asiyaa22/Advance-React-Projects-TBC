@@ -15,7 +15,7 @@ export default function SearchPage() {
 
     
     useEffect(() => {
-        const base_url = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+        const base_url = process.env.URL || "http://localhost:3000";
         let active = true;
         (async () => {
             try {
