@@ -4,7 +4,7 @@ async function getMovie(id) {
   // Guard: if no id, don't call API
   if (!id) return null;
 
-  const res = await fetch(`http://localhost:3000/api/movies?id=${encodeURIComponent(id)}`, {
+  const res = await fetch(`/api/movies?id=${encodeURIComponent(id)}`, {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch movie");
