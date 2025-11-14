@@ -2,7 +2,8 @@ import ProductCard from "@/components/ProductCard";
 import ServerTime from "@/components/ServerTime"; // 👈 add this
 
 async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const base_url = process.env.URL
+  const res = await fetch(`${base_url}/api/products`, {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch products (SSR)");

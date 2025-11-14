@@ -10,8 +10,9 @@ export default function CSRPage() {
   useEffect(() => {
     let active = true;
     (async () => {
+      const base_url = process.env.URL
       try {
-        const res = await fetch("/api/products");
+        const res = await fetch(`${base_url}/api/products`);
         const data = await res.json();
         if (active) setProducts(data);
       } finally {
