@@ -6,4 +6,5 @@ export default defineConfig({
   optimizeDeps: {
     include: ["react-window"], // ✅ ensure it's properly pre-bundled
   },
+  base: './'
 });
